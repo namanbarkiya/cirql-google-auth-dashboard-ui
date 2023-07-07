@@ -5,6 +5,8 @@ import { FiSearch } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import avatar from "../assets/avatar.png";
 import { MdAlarm } from "react-icons/md";
+import { useSelector } from "react-redux";
+import { selectUser } from "../store/reducer/UserReducer";
 
 const Navbar = (props: {
     onOpenSidenav: () => void;
@@ -12,6 +14,8 @@ const Navbar = (props: {
     secondary?: boolean | string;
 }) => {
     const { onOpenSidenav, brandText } = props;
+
+    const userInfo = useSelector(selectUser);
 
     return (
         <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl  p-2 bg-white/10 backdrop-blur-xl">
@@ -102,8 +106,8 @@ const Navbar = (props: {
                     button={
                         <img
                             className="h-10 w-10 rounded-full"
-                            src={avatar}
-                            alt="Elon Musk"
+                            src={userInfo.picture || avatar}
+                            alt="DP"
                         />
                     }
                     children={
@@ -111,7 +115,7 @@ const Navbar = (props: {
                             <div className="mt-3 ml-4">
                                 <div className="flex items-center gap-2">
                                     <p className="text-sm font-bold text-navy-700 ">
-                                        👋 Hey, Adela
+                                        Hi, {userInfo.name || "Naman Barkiya"}
                                     </p>{" "}
                                 </div>
                             </div>

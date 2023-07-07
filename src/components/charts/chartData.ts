@@ -73,8 +73,8 @@ export const lineChartOptionsTotalSpent = {
 };
 
 export const pieChartOptions = {
-    labels: ["Your files", "System", "Empty"],
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    labels: ["Basic Test", "Custom Short Pants", "Super Hoodies"],
+    colors: ["#98D89E", "#F6DC7D", "#EE8484"],
     chart: {
         width: "50px",
     },

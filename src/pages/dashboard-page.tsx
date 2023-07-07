@@ -8,15 +8,18 @@ import {
 import Card from "../components/Card";
 import LineChart from "../components/charts/LineChart";
 import {
-    lineChartDataTotalSpent,
     lineChartOptionsTotalSpent,
-    pieChartData,
     pieChartOptions,
 } from "../components/charts/chartData";
 import PieChart from "../components/charts/PieChart";
+import { useSelector } from "react-redux";
+import { selectChart } from "../store/reducer/chartReducer";
 
 export default function DashboardPage() {
-    const totalPie = pieChartData[0] + pieChartData[1] + pieChartData[2];
+    const chartData = useSelector(selectChart);
+
+    const totalPie = chartData.pie[0] + chartData.pie[1] + chartData.pie[2];
+
     return (
         <div>
             <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 3xl:grid-cols-6">
@@ -59,7 +62,7 @@ export default function DashboardPage() {
                 </div>
                 <LineChart
                     chartOptions={lineChartOptionsTotalSpent}
-                    chartData={lineChartDataTotalSpent}
+                    chartData={chartData.line}
                 />
             </div>
             <div className=" w-full mt-5 grid gap-5 grid-cols-1 md:grid-cols-2">
@@ -80,7 +83,7 @@ export default function DashboardPage() {
                     <div className="mb-auto flex h-[220px] w-full items-center justify-center">
                         <PieChart
                             chartOptions={pieChartOptions}
-                            chartData={pieChartData}
+                            chartData={chartData.pie}
                         />
                         <div className="flex flex-col items-start justify-between h-32">
                             <span className="flex justify-center items-center">
@@ -91,7 +94,7 @@ export default function DashboardPage() {
                                 <h2>Basic Test</h2>
                             </span>
                             <span className="ml-4">
-                                {(pieChartData[0] / totalPie) * 100}%
+                                {(chartData.pie[0] / totalPie) * 100}%
                             </span>
                             <span className="flex justify-center items-center">
                                 <div
@@ -101,7 +104,7 @@ export default function DashboardPage() {
                                 Custom Short Pants
                             </span>
                             <span className="ml-4">
-                                {(pieChartData[1] / totalPie) * 100}%
+                                {(chartData.pie[1] / totalPie) * 100}%
                             </span>
                             <span className="flex justify-center items-center">
                                 <div
@@ -111,7 +114,7 @@ export default function DashboardPage() {
                                 Super Hoodies
                             </span>
                             <span className="ml-4">
-                                {(pieChartData[2] / totalPie) * 100}%
+                                {(chartData.pie[2] / totalPie) * 100}%
                             </span>
                         </div>
                     </div>
