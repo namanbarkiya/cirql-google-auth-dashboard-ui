@@ -15,7 +15,7 @@ export const SidebarLinks = (props: { routes: any }): JSX.Element => {
     };
 
     const createLinks = (routes: any) => {
-        return routes.map((route, index) => {
+        return routes.map((route: any, index: number) => {
             if (
                 route.layout === "/dashboard" ||
                 route.layout === "/auth" ||

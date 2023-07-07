@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser, setUserInfo } from "../store/reducer/UserReducer";
+import { selectUser, setUserInfo } from "../store/reducer/userReducer";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { useEffect } from "react";

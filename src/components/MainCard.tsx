@@ -1,5 +1,3 @@
-import React from "react";
-
 function MainCard({ title }: { title: string }) {
     return (
         <div className=" w-full mt-5 bg-white rounded-xl p-6">

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/login-page";
 import DashboardLayout from "./layout/dashboard-layout";
-import { selectUser } from "./store/reducer/UserReducer";
+import { selectUser } from "./store/reducer/userReducer";
 import { useEffect, useState } from "react";
 
 function App() {

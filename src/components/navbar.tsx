@@ -6,7 +6,7 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import avatar from "../assets/avatar.png";
 import { MdAlarm } from "react-icons/md";
 import { useSelector } from "react-redux";
-import { selectUser } from "../store/reducer/UserReducer";
+import { selectUser } from "../store/reducer/userReducer";
 
 const Navbar = (props: {
     onOpenSidenav: () => void;

@@ -1,5 +1,3 @@
-import React from "react";
-
 // Admin Imports
 import DashboardPage from "./pages/dashboard-page";
 
