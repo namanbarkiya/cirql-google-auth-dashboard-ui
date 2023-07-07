@@ -1,14 +1,10 @@
 import Dropdown from "./dropdown";
 import { FiAlignJustify } from "react-icons/fi";
 import { Link } from "react-router-dom";
-// import navbarimage from "assets/img/layout/Navbar.png";
-import { BsArrowBarUp } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
-import {
-    IoMdNotificationsOutline,
-    IoMdInformationCircleOutline,
-} from "react-icons/io";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import avatar from "../assets/avatar.png";
+import { MdAlarm } from "react-icons/md";
 
 const Navbar = (props: {
     onOpenSidenav: () => void;
@@ -18,7 +14,7 @@ const Navbar = (props: {
     const { onOpenSidenav, brandText } = props;
 
     return (
-        <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl  p-2 bg-white/10 p-2 backdrop-blur-xl">
+        <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl  p-2 bg-white/10 backdrop-blur-xl">
             <div className="ml-[6px]">
                 <p className="shrink text-[33px] capitalize text-navy-700 ">
                     <Link
@@ -69,31 +65,29 @@ const Navbar = (props: {
                             </div>
 
                             <button className="flex w-full items-center">
-                                <div className="flex h-full w-[85px] items-center justify-center rounded-xl bg-gradient-to-b from-brandLinear to-brand-500 py-4 text-2xl text-white">
-                                    <BsArrowBarUp />
+                                <div className="flex h-full w-[85px] items-center justify-center rounded-xl bg-gradient-to-b from-brandLinear to-brand-500 py-4 text-2xl text-black">
+                                    <MdAlarm />
                                 </div>
                                 <div className="ml-2 flex h-full w-full flex-col justify-center rounded-lg px-1 text-sm">
                                     <p className="mb-1 text-left text-base font-bold text-gray-900 ">
-                                        New Update: Horizon UI Dashboard PRO
+                                        Notification 1
                                     </p>
                                     <p className="font-base text-left text-xs text-gray-900 ">
-                                        A new update for your downloaded item is
-                                        available!
+                                        details of notification 1
                                     </p>
                                 </div>
                             </button>
 
                             <button className="flex w-full items-center">
-                                <div className="flex h-full w-[85px] items-center justify-center rounded-xl bg-gradient-to-b from-brandLinear to-brand-500 py-4 text-2xl text-white">
-                                    <BsArrowBarUp />
+                                <div className="flex h-full w-[85px] items-center justify-center rounded-xl bg-gradient-to-b from-brandLinear to-brand-500 py-4 text-2xl text-black">
+                                    <MdAlarm />
                                 </div>
                                 <div className="ml-2 flex h-full w-full flex-col justify-center rounded-lg px-1 text-sm">
                                     <p className="mb-1 text-left text-base font-bold text-gray-900 ">
-                                        New Update: Horizon UI Dashboard PRO
+                                        Notification 2
                                     </p>
                                     <p className="font-base text-left text-xs text-gray-900 ">
-                                        A new update for your downloaded item is
-                                        available!
+                                        Details of notification 2
                                     </p>
                                 </div>
                             </button>

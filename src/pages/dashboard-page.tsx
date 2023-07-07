@@ -19,7 +19,7 @@ export default function DashboardPage() {
     const totalPie = pieChartData[0] + pieChartData[1] + pieChartData[2];
     return (
         <div>
-            <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-6">
+            <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4 3xl:grid-cols-6">
                 <Card
                     title="Total Revenues"
                     detail="$2,129,430"
