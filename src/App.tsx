@@ -12,7 +12,6 @@ function App() {
 
     useEffect(() => {
         setSigned(isAuthenticated.is_logged_in);
-        console.log(isAuthenticated);
     }, [isAuthenticated]);
 
     return (

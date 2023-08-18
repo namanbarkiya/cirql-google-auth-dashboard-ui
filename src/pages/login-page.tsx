@@ -1,15 +1,13 @@
-import { useEffect } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 
-import { selectUser, setUserInfo } from "../store/reducer/userReducer";
+import { setUserInfo } from "../store/reducer/userReducer";
 
 export default function LoginPage() {
     const dispatch = useDispatch();
-    const userInfo = useSelector(selectUser);
 
     const login = useGoogleLogin({
         onSuccess: (tokenResponse) => {
@@ -29,16 +27,16 @@ export default function LoginPage() {
                 }
             );
             const { name, id, email, picture } = res.data;
-            console.log(name, id, email, picture);
+            // console.log(name, id, email, picture);
             dispatch(setUserInfo({ name, id, picture, email }));
         } catch (err) {
             console.log(err);
         }
     };
 
-    useEffect(() => {
-        console.log(userInfo);
-    }, [userInfo]);
+    // useEffect(() => {
+    // console.log(userInfo);
+    // }, [userInfo]);
 
     return (
         <div className="containerLogin">
