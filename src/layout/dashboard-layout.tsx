@@ -1,9 +1,10 @@
 // import React from "react";
+import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+
 import Navbar from "../components/navbar";
 // import Sidebar from "components/sidebar";
 import routes from "../routes";
-import React from "react";
 import Sidebar from "../components/Sidenav";
 
 export default function DashboardLayout(props: { [x: string]: any }) {
