@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,7 +8,6 @@ import axios from "axios";
 import { selectUser, setUserInfo } from "../store/reducer/userReducer";
 
 export default function LoginPage() {
-    const navigation = useNavigate();
     const dispatch = useDispatch();
     const userInfo = useSelector(selectUser);
 
