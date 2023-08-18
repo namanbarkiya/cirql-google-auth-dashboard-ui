@@ -25,7 +25,7 @@ const Sidebar = (props: {
 
                 <div className={`mx-[30px] mt-[50px] flex`}>
                     <div className="mt-1 ml-1 h-2.5 font-poppins text-4xl font-bold text-white mb-16">
-                        Board. <span className="font-medium"></span>
+                        Cirql. <span className="font-medium"></span>
                     </div>
                 </div>
 

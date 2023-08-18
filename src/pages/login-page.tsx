@@ -1,11 +1,12 @@
+import { useEffect } from "react";
+import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser, setUserInfo } from "../store/reducer/userReducer";
-import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
-import { useEffect } from "react";
+
+import { selectUser, setUserInfo } from "../store/reducer/userReducer";
 
 export default function LoginPage() {
     const navigation = useNavigate();
@@ -14,7 +15,6 @@ export default function LoginPage() {
 
     const login = useGoogleLogin({
         onSuccess: (tokenResponse) => {
-            console.log(tokenResponse);
             checkUser(tokenResponse.access_token);
         },
     });
@@ -46,7 +46,7 @@ export default function LoginPage() {
         <div className="containerLogin">
             <div className="section section-1 hidden md:flex">
                 <h1 className="text-5xl font-semibold mb-4 text-white">
-                    Board.
+                    Cirql.
                 </h1>
             </div>
 
@@ -62,10 +62,10 @@ export default function LoginPage() {
                             <FcGoogle className="h-5 w-5" />
                             <span className="ml-2">Sign in with Google</span>
                         </button>
-                        <button className="bg-white hover:bg-gray-200 text-gray-800 font-thin py-2 px-4 rounded inline-flex items-center mt-2">
+                        <div className="bg-gray-200 text-gray-800 font-thin py-2 px-4 rounded inline-flex items-center mt-2">
                             <BsApple className="h-5 w-5" />
                             <span className="ml-2">Sign in with Apple</span>
-                        </button>
+                        </div>
                     </div>
                     <div className="bg-white rounded-lg p-6 mt-4">
                         <form>
@@ -77,6 +77,7 @@ export default function LoginPage() {
                                     Email
                                 </label>
                                 <input
+                                    disabled
                                     className="w-full px-3 py-2 border rounded-md"
                                     type="email"
                                     id="email"
@@ -91,6 +92,7 @@ export default function LoginPage() {
                                     Password
                                 </label>
                                 <input
+                                    disabled
                                     className="w-full px-3 py-2 border rounded-md"
                                     type="password"
                                     id="password"
@@ -104,10 +106,7 @@ export default function LoginPage() {
                                 Forgot Password?
                             </a>
                             <div className="flex justify-between items-center mb-4 mt-2">
-                                <button
-                                    className="bg-black w-full text-white px-4 py-2 rounded-md"
-                                    onClick={() => navigation("/app")}
-                                >
+                                <button className="bg-black w-full text-white px-4 py-2 rounded-md">
                                     Sign In
                                 </button>
                             </div>
